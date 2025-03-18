@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    image: php:8.4-fpm
+    container_name: laravel_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    environment:
+      - COMPOSER_ALLOW_SUPERUSER=1
+    networks:
+      - laravel
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: [ "php-fpm" ]
+
+  composer:
+    image: composer:latest
+    container_name: laravel_composer
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: [ "composer", "install" ]
+    networks:
+      - laravel
+
+networks:
+  laravel:
+    driver: bridge
