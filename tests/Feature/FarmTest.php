@@ -2,12 +2,10 @@
 
     namespace Tests\Feature;
 
-    use App\Classes\Farm\Printer\Printer;
     use App\Farm\Animals\Chicken;
     use App\Farm\Animals\Cow;
     use App\Farm\Farm;
-    use Illuminate\Foundation\Testing\RefreshDatabase;
-    use Illuminate\Foundation\Testing\WithFaker;
+    use App\Farm\Printer\Printer;
     use Tests\TestCase;
 
     /**

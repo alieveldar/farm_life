@@ -2,8 +2,7 @@
 
     namespace App\Farm\Animals;
 
-    use App\Classes\Farm\Animals\AnimalTypes;
-    use App\Classes\Farm\Products\ProductTypes;
+    use App\Farm\Products\ProductTypes;
 
     /**
      *

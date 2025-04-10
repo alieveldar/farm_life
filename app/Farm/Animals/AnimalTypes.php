@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Classes\Farm\Animals;
+    namespace App\Farm\Animals;
 
     /**
      *

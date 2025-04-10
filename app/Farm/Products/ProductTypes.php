@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Classes\Farm\Products;
+    namespace App\Farm\Products;
 
     /**
      *
@@ -9,4 +9,6 @@
     {
         case MILK = 'Milk';
         case EGGS = 'Eggs';
+
+        case WOOL = 'Wool';
     }

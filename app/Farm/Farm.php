@@ -2,7 +2,6 @@
 
     namespace App\Farm;
 
-    use App\Classes\Farm\Printer\Printer;
     use App\Farm\Animals\Animal;
 
     /**
@@ -20,19 +19,6 @@
         private array $collectedProducts = [];
 
         /**
-         * @var Printer
-         */
-        private Printer $printer;
-
-        /**
-         * @param Printer $printer
-         */
-        public function __construct(Printer $printer)
-        {
-            $this->printer = $printer;
-        }
-
-        /**
          * @param Animal $animal
          * @return void
          */
@@ -44,7 +30,7 @@
         /**
          * @return void
          */
-        public function collectProducts(): void
+        public function collectProducts(int $days = 1): void
         {
             /** @var Animal $animal */
             foreach ($this->animals as $animal) {
@@ -58,18 +44,18 @@
         }
 
         /**
-         * @param $type
-         * @return void
+         * @return array
          */
-        public function printStatistic($type): void
+        public function getAnimals(): array
         {
-            switch ($type) {
-                case Printer::ANIMAL_TYPE:
-                    $this->printer->printAnimalsStatistic($this->animals);
-                    break;
-                case Printer::PRODUCT_TYPE:
-                    $this->printer->printProductsStatistic($this->collectedProducts);
-                    break;
-            }
+            return $this->animals;
+        }
+
+        /**
+         * @return array
+         */
+        public function getCollectedProducts(): array
+        {
+            return $this->collectedProducts;
         }
     }

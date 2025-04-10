@@ -2,9 +2,9 @@
 
     namespace Tests\Unit;
 
-    use App\Classes\Farm\Printer\SimplePrinter;
     use App\Farm\Animals\Chicken;
     use App\Farm\Animals\Cow;
+    use App\Farm\Printer\SimplePrinter;
     use PHPUnit\Framework\TestCase;
 
     /**

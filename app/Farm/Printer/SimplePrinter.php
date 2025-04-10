@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Classes\Farm\Printer;
+    namespace App\Farm\Printer;
 
     use App\Farm\Animals\Animal;
 
@@ -14,12 +14,12 @@
          * @param array $animals
          * @return void
          */
-        public function printAnimalsStatistic(array $animals): void
+        public function printAnimalsStatistic(): void
         {
             $data = array();
 
             /** @var Animal $animal * */
-            foreach ($animals as $animal) {
+            foreach ($this->farm->getAnimals() as $animal) {
                 $animalType = $animal->getType();
                 if (isset($data[$animalType->value])) {
                     $data[$animalType->value] += 1;
@@ -37,9 +37,9 @@
          * @param array $products
          * @return void
          */
-        public function printProductsStatistic(array $products): void
+        public function printProductsStatistic(): void
         {
-            foreach ($products as $product => $quantity) {
+            foreach ($this->farm->getCollectedProducts() as $product => $quantity) {
                 print " $product: $quantity \n";
             }
         }
